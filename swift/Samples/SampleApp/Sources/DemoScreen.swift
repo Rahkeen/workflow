@@ -35,20 +35,10 @@ struct DemoScreen: Screen {
 }
 
 private final class DemoViewController: ScreenViewController<DemoScreen> {
-    private let titleButton: UIButton
-    private let subscribeButton: UIButton
-    private let statusLabel: UILabel
-    private let refreshButton: UIButton
-
-    required init(screen: DemoScreen, environment: ViewEnvironment) {
-        self.titleButton = UIButton(frame: .zero)
-        self.subscribeButton = UIButton(frame: .zero)
-        self.statusLabel = UILabel(frame: .zero)
-        self.refreshButton = UIButton(frame: .zero)
-        super.init(screen: screen, environment: environment)
-
-        update(with: screen)
-    }
+    private let titleButton: UIButton = UIButton(frame: .zero)
+    private let subscribeButton: UIButton = UIButton(frame: .zero)
+    private let statusLabel: UILabel = UILabel(frame: .zero)
+    private let refreshButton: UIButton = UIButton(frame: .zero)
 
     override func viewDidLoad() {
         super.viewDidLoad()

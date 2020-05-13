@@ -26,19 +26,9 @@ struct TwoFactorScreen: Screen {
 }
 
 private final class TwoFactorViewController: ScreenViewController<TwoFactorScreen> {
-    let titleLabel: UILabel
-    let twoFactorField: UITextField
-    let button: UIButton
-
-    required init(screen: TwoFactorScreen, environment: ViewEnvironment) {
-        self.titleLabel = UILabel(frame: .zero)
-        self.twoFactorField = UITextField(frame: .zero)
-        self.button = UIButton(frame: .zero)
-
-        super.init(screen: screen, environment: environment)
-
-        update(with: screen)
-    }
+    let titleLabel: UILabel = UILabel(frame: .zero)
+    let twoFactorField: UITextField = UITextField(frame: .zero)
+    let button: UIButton = UIButton(frame: .zero)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,10 +82,6 @@ private final class TwoFactorViewController: ScreenViewController<TwoFactorScree
     }
 
     override func screenDidChange(from previousScreen: TwoFactorScreen, previousEnvironment: ViewEnvironment) {
-        update(with: screen)
-    }
-
-    private func update(with screen: TwoFactorScreen) {
         titleLabel.text = screen.title
     }
 
